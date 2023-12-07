@@ -1,0 +1,215 @@
+:root{
+    /* 
+    Enfoque de diseño basado en sistemas para establecer reglas y patrones escalables y reutilizables.
+    Se personalizan variables para acceder a cualquier valor de una propiedad mediante la pseudoclase ":root" con la sintaxis --nombre-variable 
+    */
+    /* --nombre-variable */
+    --font-primary:'Poppins', sans-serif;
+    --color-primary:#A60311;
+    --color-secondary:#D9042B;
+    --color-text-primary:#D9CCB4;
+    --color-text-secondary:#D98E04;
+    --color-background:#9FC131;
+    --color-light:#FFFFFF;
+    --color-dark:#000000;
+}
+
+.position{
+
+width: 100px;
+height: 100px;
+
+}
+
+#static{ /*pOSICION POR DEFAULT DE HTML, NO SE AFECTA POR MARGINS DE NINGUN TIPO*/
+    position:static;
+    top:20px;
+    bottom:20px;
+    left:20px;
+    right:20px;
+
+    background-color: var(--color-text-secondary);
+}
+
+#relative{ /* Es posicionado de forma relativa al elemento anterior o pocisión original y si permite movimineto medienate propiedades top,botoom,right,left*/
+    position:relative;
+    top:50px;
+    left:200px;
+    background-color: var(--color-text-primary);
+}
+
+#absolute{ /*Se posiciona de forma relativa en relacion a su ancesestro más cercano y no con relacion al viewport*/
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+#fixed{/* Nos permite mantener el elemento de manera fija en el viewport*/
+   
+    left: 10px;
+    top: 20px;
+    background-color: aqua;
+}
+
+#chat{
+
+    border:solid var(--color-light)1px;
+    width: 100px;
+    height:100px;
+}
+
+#whatsapp-icon{
+    position:fixed;
+    width: 60px;
+    height:60px;
+}
+.display-inline{
+    width: 100px;
+    height:100px;
+    background-color:var(--color-text-primary);
+    color: var(--color-dark);
+    text-align:center;
+    margin:2px;
+
+
+}
+
+.display-block{
+    /*display:block;*/
+display:inline-block;
+    width: 100px;
+    height:100px;
+    background-color:var(--color-text-secondary);
+    text-align:center;
+    margin:2px;
+
+}
+
+.display-none{
+    display:none;
+}
+
+#display-1,#display-2{
+    display:inline;
+
+}
+
+
+body{
+    background-color: var(--color-background);
+    color: var(--color-light);
+    font-family: var(--font-primary);
+}
+/*Display flex.Me permite trabajar de manera flexible con elemenetos anidados dentro de un ancestro.En flexbox se aplica en el container y tienen efecto sobre los hijos.
+Por default,la doreccion de flex es en filas(row).
+Vamos a poder acceder a diversas propiedades para modificar el comportamiento de los elementos.
+
+-flex-direction:column,column-reverse,row,row-reverse
+
+- flex-wrap:wrap,nowrap,wrap-reverse
+
+-jistify-content:center,flex-star,flex-end,space between,space-around
+
+-align-item:start,end,center
+
+-align selft:solo se puede aplicar a un solo item
+
+
+
+*/
+.container{
+    display:flex;
+    /*flex-direction:row-reverse;*/
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space around;
+    align-items:center;
+    width:auto;
+    height:350px;
+    margin:10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color:var(--color-text-secondary);
+
+
+}
+
+.display-flex{
+    
+    width: 100px;
+    height:80px;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    background-color: var(--color-background);
+    border-radius: 6px;
+}
+
+#item-6{
+
+    align-self:center;
+}
+a{
+    text-decoration:none;
+    color:var(--color-light);
+}
+
+/* Grid lyout
+
+Elementos de una cuadricula grid:contenedor,items,celdas,area
+display:grid;
+*/
+.grid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows:auto;
+    gap:20px;
+
+    padding:10px;
+}
+.display-grid{
+    background-color:var(--color-text-secondary);
+    border-radius:3px;
+    padding:20px;
+    text-align:center;
+    border: solid var(--color-text-primary) 1px;
+}
+.container-1{
+    display:grid;
+    grid-template-columns:1fr;
+    /*grid-template-rows: 1fr 2fr 2fr 1fr;*/
+    grid-template-areas:
+    "head"
+    "aside"
+    "article"
+    "footer"
+}
+header{
+    background-color:tomato;
+    grid-area:head;
+}
+
+
+
+
+aside{
+    background-color: darkgreen;
+    grid-area:aside;
+}
+
+article{
+    background-color:darkgoldenrod;
+    grid-area:article;
+}
+
+section{
+    background-color: violet;
+    grid-area:section;
+}
+
+footer{
+    background-color: #D98E04;
+    grid-area:footer;
+}
