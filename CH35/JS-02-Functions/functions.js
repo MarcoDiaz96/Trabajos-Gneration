@@ -34,7 +34,7 @@ function suma(x, y){
 
 }
 let resultado = suma(255,245);
-console.log(`El resultado de sumar x + y es ${resultado} segundos`);
+console.log(`El resultado de sumar x + y es ${resultado} `);
 
 //Calcular el cuadrado de un numero
 
